@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Accounting System Monitoring Dashboard</title>
+</head>
+<body>
+<h1>Accounting System Monitoring Dashboard</h1>
+<div>
+<h2>System Performance</h2>
+<table id="system_performance">
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+{% for key, value in data.items() %}
+<tr>
+<td>{{ key }}</td>
+<td>{{ value }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+<div>
+<h2>Error Logs</h2>
+<table id="error_logs">
+<thead>
+<tr>
+<th>Timestamp</th>
+<th>Error Message</th>
+</tr>
+</thead>
+<tbody>
+{% for error in data.error_logs %}
+<tr>
+<td>{{ error.timestamp }}</td>
+<td>{{ error.message }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+</body>
+</html>
+
